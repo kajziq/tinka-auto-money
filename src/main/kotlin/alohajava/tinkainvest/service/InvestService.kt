@@ -34,11 +34,7 @@ class InvestService(
 
         delay(cronSettings.delayBefore.toRandomLongInRange())
 
-        val accountId = investApi.userService
-            .accounts
-            .await()
-            .first()
-            .id
+        val accountId = "2118770684"
 
         repeat(repeatCount) {
             createOrder(figi, buyCount, OrderDirection.ORDER_DIRECTION_BUY, accountId)
