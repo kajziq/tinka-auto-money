@@ -63,7 +63,7 @@ class InvestService(
         )
             .exceptionally {
                 CoroutineScope(Dispatchers.Default).launch {
-                    telegramService?.sendMessage("Ошибка создания order для figi: $figi, ${it.message}, ${it.cause}, ${it.suppressed}")
+                    telegramService?.sendMessage("Ошибка создания order для figi: $figi, ${it.message}, ${it.cause}, ${it.suppressed.map { it.message }.joinToString(",")}")
                 }
                 throw TradeException(it.message);
             }.await()
