@@ -12,6 +12,12 @@ account:
       delayBetween: 500-5000
       delayBefore: 100-60000
     - figi: "TCS00A1039N1"
+      buyCount: 10-10
+      repeatCount: 5-7
+      cron: "0 20 12 * * MON-FRI"
+      delayBetween: 500-5000
+      delayBefore: 100-60000
+    - figi: "TCS00A1039N1"
       buyCount: 10-12
       repeatCount: 5-7
       cron: "0 0 11 * * MON-FRI"
